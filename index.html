@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Cobrinha (Snake Game)</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonte com estilo arcade / retrô -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="game-wrapper">
+    <!-- Cabeçalho e Placar -->
+    <header class="header">
+      <h1 class="title">🐍 JOGO DA COBRINHA</h1>
+      <div class="score-board">
+        <div class="score-card">
+          <span class="label">PONTOS</span>
+          <span id="current-score" class="value">0</span>
+        </div>
+        <div class="score-card">
+          <span class="label">RECORDE</span>
+          <span id="high-score" class="value">0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Área Principal do Jogo (Canvas) -->
+    <div class="canvas-container">
+      <canvas id="game-canvas" width="400" height="400"></canvas>
+      
+      <!-- Tela de Início / Game Over (Overlay) -->
+      <div id="game-overlay" class="overlay">
+        <h2 id="overlay-title">PRONTO PRA JOGAR?</h2>
+        <p id="overlay-msg">Use as setas do teclado ou os botões na tela.</p>
+        <button id="btn-start" class="btn primary">INICIAR JOGO</button>
+      </div>
+    </div>
+
+    <!-- Controles Rápidos -->
+    <div class="controls-bar">
+      <button id="btn-pause" class="btn secondary">⏸ Pausar</button>
+      <button id="btn-restart" class="btn secondary">🔄 Reiniciar</button>
+      <button id="btn-sound" class="btn secondary">🔊 Som: Ligado</button>
+    </div>
+
+    <!-- Controles Virtuais para Celular / Mouse -->
+    <div class="d-pad">
+      <button class="d-btn up" data-dir="UP">⬆️</button>
+      <div class="d-middle-row">
+        <button class="d-btn left" data-dir="LEFT">⬅️</button>
+        <div class="d-center"></div>
+        <button class="d-btn right" data-dir="RIGHT">➡️</button>
+      </div>
+      <button class="d-btn down" data-dir="DOWN">⬇️</button>
+    </div>
+
+    <!-- Instruções -->
+    <footer class="footer">
+      <p>💡 <b>Como jogar:</b> Use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> ou as <b>Setas</b> do teclado. Colete as maçãs douradas sem bater nas paredes ou no próprio corpo!</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
